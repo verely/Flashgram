@@ -17,6 +17,15 @@ async function suggestComment(text) {
         return data.suggestions
     } catch (err) {
         logger.error('AI service error:', err.message)
-        throw new Error('AI suggestion failed')
+        return getFallbackSuggestions(text)
     }
+}
+
+function getFallbackSuggestions(text) {
+    // Simple fallback when AI service is unavailable
+    return [
+        "Great post! 👍",
+        "Love this! ❤️",
+        "Thanks for sharing! 🙌"
+    ]
 }
