@@ -39,6 +39,9 @@ app.use('/api/post', postRoutes)
 import { setupSocketAPI } from './services/socket.service.js'
 setupSocketAPI(server)
 
+import { aiSuggestRouter } from './api/aiSuggest/aiSuggest.routes.js'
+app.use('/api/ai', aiSuggestRouter)
+
 // const port = 3030
 const port = process.env.PORT || 3000
 app.get('/**', (req, res) => {
