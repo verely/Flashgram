@@ -1,14 +1,12 @@
 import Axios from 'axios'
 
-var axios = Axios.create({
-    withCredentials: true
-})
-
-
 const BASE_URL = import.meta.env.VITE_DEV_ENV === 'true'
   ? '//localhost:3000/api/ai/'
   : '/api/ai/'
 
+var axios = Axios.create({
+    withCredentials: true
+})
 
 export const aiSuggestService = {
     getCommentSuggestions
