@@ -39,7 +39,7 @@ app.use('/api/post', postRoutes)
 import { setupSocketAPI } from './services/socket.service.js'
 setupSocketAPI(server)
 
-import { aiSuggestRouter } from './api/aiSuggest/aiSuggest.routes.js'
+import { aiSuggestRouter } from './api/ai/aiSuggest.routes.js'
 app.use('/api/ai', aiSuggestRouter)
 
 // const port = 3030
